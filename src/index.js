@@ -1,13 +1,27 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
-import { init, mockTelegramEnv, parseInitDataQuery } from '@telegram-apps/sdk';
+import { init, mockTelegramEnv } from '@telegram-apps/sdk';
+
+
+const parseInitData = (initDataRaw) => {
+  const params = new URLSearchParams(initDataRaw);
+  const user = JSON.parse(params.get('user'));
+  return {
+    user,
+    hash: params.get('hash'),
+    auth_date: params.get('auth_date'),
+    start_param: params.get('start_param'),
+    chat_type: params.get('chat_type'),
+    chat_instance: params.get('chat_instance'),
+  };
+};
 
 const initializeTelegramSDK = async () => {
   try {
     // Попытка инициализировать настоящее окружение Telegram
     console.log("Инициализация окружения Telegram");
-    const [miniApp] = init();
+    const miniApp = await init(); // Используем функцию init вместо initMiniApp
     await miniApp.ready();
   } catch (error) {
     // В случае ошибки инициализируем фейковое окружение
@@ -46,7 +60,7 @@ const initializeTelegramSDK = async () => {
         subtitleTextColor: '#708499',
         textColor: '#f5f5f5',
       },
-      initData: parseInitDataQuery(initDataRaw),
+      initData: parseInitData(initDataRaw),
       initDataRaw,
       version: '7.2',
       platform: 'tdesktop',

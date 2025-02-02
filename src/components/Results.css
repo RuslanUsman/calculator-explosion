@@ -1,0 +1,32 @@
+.Results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #14240b;
+    padding: 20px;
+    margin: 0 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .Results h1, .Results h2, .Results p {
+    color: #ffffff;
+  }
+  
+  .Results h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .Results h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .Results p {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+  
