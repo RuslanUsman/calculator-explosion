@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/calculator-explosion/static/css/main.390fd4a8.css",
+    "main.js": "/calculator-explosion/static/js/main.448c107a.js",
+    "index.html": "/calculator-explosion/index.html",
+    "main.390fd4a8.css.map": "/calculator-explosion/static/css/main.390fd4a8.css.map",
+    "main.448c107a.js.map": "/calculator-explosion/static/js/main.448c107a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.390fd4a8.css",
+    "static/js/main.448c107a.js"
+  ]
+}
